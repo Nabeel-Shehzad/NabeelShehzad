@@ -30,17 +30,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(73, 187, 115, 1),
-        title: Text(widget.title),
+        backgroundColor: Colors.white,
+        title: Text(
+          widget.title,
+          style: TextStyle(
+            color: Colors.black87,
+          ),
+        ),
       ),
-      body: ContactForm(), // This trailing comma makes auto-formatting nicer for build methods.
+      body:
+          ContactForm(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
-
-

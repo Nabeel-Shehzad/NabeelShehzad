@@ -18,6 +18,7 @@ class _ContactFormState extends State<ContactForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text('Contact Me',style: TextStyle(fontSize: 30),),
 
           ],
         ),
