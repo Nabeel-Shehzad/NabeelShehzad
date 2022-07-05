@@ -17,7 +17,6 @@ class _ContactFormState extends State<ContactForm> {
     return Form(
       key: _formKey,
       child: Container(
-        color: Colors.black12,
         padding: EdgeInsets.all(20),
         child: Center(
           child: Column(
@@ -25,7 +24,11 @@ class _ContactFormState extends State<ContactForm> {
             children: <Widget>[
               Padding(
                 padding: const EdgeInsets.all(15.0),
-                child: Image.asset('images/logo.png',width: 100,height: 100,),
+                child: Image.asset(
+                  'images/logo.png',
+                  width: 100,
+                  height: 100,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -37,7 +40,60 @@ class _ContactFormState extends State<ContactForm> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  
+                  Expanded(child: Text('First Name: ')),
+                  Expanded(
+                      child: TextFormField(
+                    cursorColor: Color.fromRGBO(43, 187, 115, 1),
+                    decoration: InputDecoration(
+                        hintText: 'First Name',
+                        border: OutlineInputBorder(),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(43, 187, 115, 1))),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(43, 187, 115, 1)))),
+                  )),
+                  Container(
+                    width: 10,
+                  ),
+                  Expanded(child: Text('Last Name: ')),
+                  Expanded(
+                      child: TextFormField(
+                    cursorColor: Color.fromRGBO(43, 187, 115, 1),
+                    decoration: InputDecoration(
+                        hintText: 'Last Name',
+                        border: OutlineInputBorder(),
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(43, 187, 115, 1))),
+                        enabledBorder: OutlineInputBorder(
+                            borderSide: BorderSide(
+                                color: Color.fromRGBO(43, 187, 115, 1)))),
+                  )),
+                ],
+              ),
+              Container(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(child: Text('Phone: ')),
+                  Expanded(
+                      child: TextFormField(
+                        cursorColor: Color.fromRGBO(43, 187, 115, 1),
+                        decoration: InputDecoration(
+                            hintText: 'Phone No. (Optional)',
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromRGBO(43, 187, 115, 1))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromRGBO(43, 187, 115, 1)))),
+                      )),
+                  Container(width: 10,),
+                  Expanded(child: Container()),
+                  Expanded(child: Container()),
                 ],
               )
             ],
