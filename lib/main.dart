@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Nabeel Shehzad',
-      home: const MyHomePage(title: 'Nabeel Shehzad'),
+      home: const MyHomePage(title: 'Apptreo'),
     );
   }
 }
@@ -34,16 +34,26 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         title: Text(
           widget.title,
           style: TextStyle(
-            color: Colors.black87,
+            color: Color.fromRGBO(43, 187, 115,1),
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.login,
+              color: Color.fromRGBO(43, 187, 115,1),
+            ),
+            onPressed: () {
+              //TODO: do something
+            },
+          )
+        ],
       ),
-      body:
-          ContactForm(), // This trailing comma makes auto-formatting nicer for build methods.
+      body: ContactForm(), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
