@@ -14,6 +14,7 @@ class _ContactFormState extends State<ContactForm> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery. of(context). size.width;
     return Form(
       key: _formKey,
       child: Container(
@@ -22,14 +23,14 @@ class _ContactFormState extends State<ContactForm> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Image.asset(
-                  'images/logo.png',
-                  width: 100,
-                  height: 100,
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.all(15.0),
+              //   child: Image.asset(
+              //     'images/logo.png',
+              //     width: 100,
+              //     height: 100,
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Text(
@@ -78,6 +79,20 @@ class _ContactFormState extends State<ContactForm> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(child: Text('Phone: ')),
+                  width < 800 ?
+                  Expanded(
+                      child: TextFormField(
+                        cursorColor: Color.fromRGBO(43, 187, 115, 1),
+                        decoration: InputDecoration(
+                            hintText: 'Phone No. (Optional)',
+                            border: OutlineInputBorder(),
+                            focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromRGBO(43, 187, 115, 1))),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Color.fromRGBO(43, 187, 115, 1)))),
+                      )):
                   Expanded(
                       child: TextFormField(
                         cursorColor: Color.fromRGBO(43, 187, 115, 1),

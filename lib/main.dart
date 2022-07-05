@@ -53,7 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body: ContactForm(), // This trailing comma makes auto-formatting nicer for build methods.
+      body: Center(
+        child: Image(
+          image: AssetImage('images/logo.png'),
+        ),
+      ),
     );
   }
 }
