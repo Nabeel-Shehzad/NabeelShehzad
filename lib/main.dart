@@ -53,11 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       ),
-      body: Center(
-        child: Image(
-          image: AssetImage('images/logo.png'),
-        ),
-      ),
+      body: ContactForm(),
     );
   }
 }

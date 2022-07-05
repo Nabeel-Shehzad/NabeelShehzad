@@ -23,14 +23,14 @@ class _ContactFormState extends State<ContactForm> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              // Padding(
-              //   padding: const EdgeInsets.all(15.0),
-              //   child: Image.asset(
-              //     'images/logo.png',
-              //     width: 100,
-              //     height: 100,
-              //   ),
-              // ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Image.asset(
+                  'images/logo.png',
+                  width: 100,
+                  height: 100,
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: Text(
