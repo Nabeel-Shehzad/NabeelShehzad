@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nabeel_shehzad/desktopNameRow.dart';
+import 'package:nabeel_shehzad/mobileNameColumn.dart';
 
 class ContactForm extends StatefulWidget {
   const ContactForm({
@@ -12,17 +14,18 @@ class ContactForm extends StatefulWidget {
 class _ContactFormState extends State<ContactForm> {
   var _formKey = GlobalKey<FormState>();
   double width = 900;
+  var firstNameController = TextEditingController();
+  var lastNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     setState((){
       width = MediaQuery. of(context). size.width;
-      print(width);
     });
     return Form(
       key: _formKey,
-      child: Container(
-        padding: EdgeInsets.all(20),
-        child: Center(
+      child: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
@@ -42,85 +45,8 @@ class _ContactFormState extends State<ContactForm> {
                 ),
               ),
               width < 800 ?
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(child: Text('First Name: ')),
-                          Expanded(
-                              child: TextFormField(
-                                cursorColor: Color.fromRGBO(43, 187, 115, 1),
-                                decoration: InputDecoration(
-                                    hintText: 'First Name',
-                                    border: OutlineInputBorder(),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromRGBO(43, 187, 115, 1))),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromRGBO(43, 187, 115, 1)))),
-                              )),
-                        ],
-                      ),
-                      Container(height: 10,),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(child: Text('Last Name: ')),
-                          Expanded(
-                              child: TextFormField(
-                                cursorColor: Color.fromRGBO(43, 187, 115, 1),
-                                decoration: InputDecoration(
-                                    hintText: 'Last Name',
-                                    border: OutlineInputBorder(),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromRGBO(43, 187, 115, 1))),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                            color: Color.fromRGBO(43, 187, 115, 1)))),
-                              )),
-                        ],
-                      ),
-                    ],
-                  ):
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(child: Text('First Name: ')),
-                  Expanded(
-                      child: TextFormField(
-                    cursorColor: Color.fromRGBO(43, 187, 115, 1),
-                    decoration: InputDecoration(
-                        hintText: 'First Name',
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color.fromRGBO(43, 187, 115, 1))),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color.fromRGBO(43, 187, 115, 1)))),
-                  )),
-                  Container(
-                    width: 10,
-                  ),
-                  Expanded(child: Text('Last Name: ')),
-                  Expanded(
-                      child: TextFormField(
-                    cursorColor: Color.fromRGBO(43, 187, 115, 1),
-                    decoration: InputDecoration(
-                        hintText: 'Last Name',
-                        border: OutlineInputBorder(),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color.fromRGBO(43, 187, 115, 1))),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Color.fromRGBO(43, 187, 115, 1)))),
-                  )),
-                ],
-              ),
+                  MobileNameColumn(firstNameController: firstNameController, lastNameController: lastNameController):
+              DesktopNameRow(firstNameController: firstNameController, lastNameController: lastNameController),
               Container(height: 10,),
               width < 800 ?
                   Row(
@@ -171,3 +97,6 @@ class _ContactFormState extends State<ContactForm> {
     );
   }
 }
+
+
+
