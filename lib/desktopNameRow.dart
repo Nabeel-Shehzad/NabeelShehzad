@@ -49,7 +49,8 @@ class _DesktopNameRowState extends State<DesktopNameRow> {
                   enabledBorder: OutlineInputBorder(
                       borderSide: BorderSide(
                           color: Color.fromRGBO(43, 187, 115, 1)))),
-            )),
+            )
+        ),
       ],
     );
   }
